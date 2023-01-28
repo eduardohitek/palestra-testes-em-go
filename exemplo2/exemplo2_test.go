@@ -12,9 +12,8 @@ func TestIsOdd(t *testing.T) {
 	}{
 		{name: "when odd and positive", input: 2, exp: true},
 		{name: "when even and positive", input: 3, exp: false},
-		{name: "when odd and negative", input: -2, exp: true},
-		{name: "when even and negative", input: -3, exp: false},
 		{name: "when input is zero", input: 0, exp: false, isErrExp: true, errExp: ErrInputIsZero},
+		{name: "when negative", input: -2, isErrExp: true, errExp: ErrInputCantBeNegative},
 	}
 
 	for _, tc := range testCases {
