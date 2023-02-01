@@ -1,18 +1,25 @@
 package exemplo4
 
-import "strings"
-
-func findIndexByEduardo(str string, term string) int {
-	strRunes := []rune(str)
-	termRune := []rune(term)
-	for i := 0; i < len(strRunes); i++ {
-		if strRunes[i] == termRune[0] {
-			return i
+func palindromeFromEnd(str string) bool {
+	runes := []rune(str)
+	length := len(runes)
+	for i := 0; i < length; i++ {
+		if runes[i] != runes[length-1-i] {
+			return false
 		}
 	}
-	return -1
+	return true
 }
 
-func findIndexByGolang(str string, term string) int {
-	return strings.Index(str, term)
+func palindromeReverse(str string) bool {
+	strReversed := reverse(str)
+	return strReversed == str
+}
+
+func reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
 }

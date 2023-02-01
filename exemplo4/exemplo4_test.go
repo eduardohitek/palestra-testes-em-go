@@ -2,17 +2,15 @@ package exemplo4
 
 import "testing"
 
-func BenchmarkFindIndexByEduardo(b *testing.B) {
+func BenchmarkPalindromeReverse_Hannah(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		findIndexByEduardo("Golang", "ang")
+		palindromeReverse("hannah")
 	}
-	b.ReportAllocs()
 }
 
-func BenchmarkFindIndexByGolang(b *testing.B) {
+func BenchmarkPalindromeFromEnd_Hannah(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		findIndexByGolang("Golang", "ang")
+		palindromeFromEnd("hannah")
 	}
-	b.ReportAllocs()
 
 }
